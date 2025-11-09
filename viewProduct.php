@@ -47,6 +47,7 @@ $result = mysqli_query($conn, $sql);
             <th>Product Name</th>
             <th>Category</th>
             <th>Price (RWF)</th>
+            <th>Edit</th>
         </tr>
         <?php
         if (mysqli_num_rows($result) > 0) {
@@ -56,11 +57,15 @@ $result = mysqli_query($conn, $sql);
                 echo "<td>" . $row['product_name'] . "</td>";
                 echo "<td>" . $row['category'] . "</td>";
                 echo "<td>" . $row['price'] . "</td>";
+                echo "<td><a href='deleteProduct.php?id=" . $row['product_id'] . "' 
+                           onclick='return confirm(\"Are you sure you want to delete this product?\")'>delete</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='updateProduct.php'>Update</a></td>";
+
                 echo "</tr>";
             }
         } else {
             echo "<tr><td colspan='4'>No products found.</td></tr>";
         }
+        
         ?>
     </table>
 </body>

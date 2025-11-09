@@ -41,8 +41,8 @@ include("connect.php");
 </head>
 <body>
     <div class="container">
-        <h2>Add New Menu Item</h2>
-        <form action="viewProduct.php" method="POST">
+        <h2>Add New Product</h2>
+        <form action="" method="POST">
             <label>Product Name:</label>
             <input type="text" name="ProductName" required>
 
@@ -50,7 +50,7 @@ include("connect.php");
             <input type="text" name="Category" required>
 
             <label>Price:</label>
-            <input type="number" name="Price" step="0.01" required>
+            <input type="text" name="Price" step="0.01" required>
 
             <input type="submit" value="Add Product">
         </form>
