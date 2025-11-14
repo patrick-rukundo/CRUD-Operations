@@ -80,6 +80,15 @@ include("connect.php");
         input[type="submit"]:hover {
             background: #45a049;
         }
+        a{
+            border-radius: 10px;
+            background-color: #45a049;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            margin-left: 150px;
+            
+        }
 
         /* Responsive */
         @media (max-width: 400px) {
@@ -92,7 +101,7 @@ include("connect.php");
 </head>
 <body>
     <div class="form-container">
-        <form action="login.php" method="POST">
+        <form action="" method="POST">
             <h3>Customer Registration</h3>
             <label for="username">Username</label>
             <input type="text" name="username" id="username" required>
@@ -103,8 +112,10 @@ include("connect.php");
             <label for="password">Password</label>
             <input type="password" name="password" id="password" required>
 
-            <input type="submit" name="submit" value="Register">
+            <input type="submit" name="submit" value="Register"><br><br><br>
+             <a href="login.php">LOGIN</a>
         </form>
+    
     </div>
 
     <?php
@@ -117,7 +128,7 @@ include("connect.php");
         $password_hashed = md5($password);
 
         $sql = "INSERT INTO Customers(customer_name, email, password) 
-                VALUES ('$username','$email','$password_hashed')";
+                VALUES ('$username','$email','$password')";
 
         if(mysqli_query($conn, $sql)){
             echo "<script>alert('✅ Data recorded successfully!');</script>";

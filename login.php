@@ -38,6 +38,21 @@ include("connect.php");
         input[type=submit]:hover {
             background-color: #45a049;
         }
+        a{
+            border-radius: 10px;
+            background-color: #45a049;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            
+            
+        }
+        .direct{
+          display: flex; 
+          margin: 20px;
+          justify-content: center; 
+          padding: 30px;
+        }
     </style>
 </head>
 <body>
@@ -49,10 +64,14 @@ include("connect.php");
 
             <label>Password:</label>
             <input type="password" name="password" required>
+    
+            <div class="direct">
+                <div> <input type="submit" value="Login"></div>&nbsp; &nbsp; &nbsp;
+                <div><a href="createCustomer.php">Sign Up</a></div>
+            </div>
 
-            <input type="submit" value="Login">&nbsp;&nbsp;
-            <input type="submit" value="signup">
         </form>
+         
     </div>
     <?php
 

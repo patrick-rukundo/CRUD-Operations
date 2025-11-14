@@ -37,6 +37,34 @@ $result = mysqli_query($conn, $sql);
         h2 {
             text-align: center;
         }
+        .home-btn {
+    background-color: #1d3557; /* dark blue */
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    transition: 0.3s ease;
+    text-align: center;
+    margin-right: 30px;
+
+}
+
+.home-btn:hover {
+    background-color: #457b9d; 
+    transform: scale(1.05);
+}a{
+    text-decoration: none;
+
+}
+.btn{
+    display: flex;
+    margin-left: 400px;
+
+}
+
+
     </style>
 </head>
 <body>
@@ -61,13 +89,35 @@ $result = mysqli_query($conn, $sql);
                            onclick='return confirm(\"Are you sure you want to delete this product?\")'>delete</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='updateProduct.php'>Update</a></td>";
 
                 echo "</tr>";
+               
             }
         } else {
             echo "<tr><td colspan='4'>No products found.</td></tr>";
         }
         
         ?>
+         <tr>
+ 
+
+
     </table>
+    <br><br>
+    <br><br>
+     
+       
+        
+        <div class="btn">
+            <div> <a href="home.php" 
+                  onclick="return confirm('Are you sure you want to go back to home?')" 
+                  class="home-btn">
+                  Back TO Home
+                 </a></div>
+            <div> <a href="addProduct.php" class="home-btn">
+                 New Product
+                 </a>
+            </div>
+        </div>
+    
 </body>
 </html>
 
